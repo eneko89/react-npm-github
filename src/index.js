@@ -1,11 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import NpmPackages from './NpmPackages';
+import GitHubRepos from './GitHubRepos';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <NpmPackages userName="eneko89" pkgNum="5"/>
+    <GitHubRepos userName="eneko89" repoNum="5"/>
   </React.StrictMode>,
   document.getElementById('root')
 );
