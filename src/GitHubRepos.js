@@ -6,7 +6,10 @@ function GitHubRepos(props) {
   useEffect(() => {
     fetch(`https://api.github.com/users/${props.userName}/repos?per_page=${props.repoNum}&page=1&sort=updated`)
       .then(res => res.json())
-      .then(res => setRepos(res))
+      .then(res => {
+        setRepos(res);
+        props.onLoad();
+      });
   }, []);
 
   if (repos) {

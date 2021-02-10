@@ -6,7 +6,10 @@ function NpmPackages(props) {
   useEffect(() => {
     fetch(`https://registry.npmjs.org/-/v1/search?text=author:${props.userName}&size=${props.pkgNum}`)
       .then(res => res.json())
-      .then(res => setPackages(res.objects))
+      .then(res => {
+        setPackages(res.objects);
+        props.onLoad();
+      });
   }, []);
 
   if (packages) {
